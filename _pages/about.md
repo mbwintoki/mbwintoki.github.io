@@ -42,6 +42,10 @@ _Journal of Financial & Quantitative Analysis_, 55 (2020), 1717 – 1754 (with Y
 _Management Science_, 64 (2018), 3241 – 3268 (with C. Jiang, T. Kubick and M. Miletkov)
 
 
+[Indirect Insider Trading](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3270095), 
+_Journal of Financial & Quantitative Analysis_, forthcoming (with B. Goldie, C. Jiang and P. Koch)
+
+
 [See complete list of publications...](https://mbwintoki.github.io/publications)
 
 
