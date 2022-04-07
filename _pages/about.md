@@ -43,7 +43,7 @@ _**Journal of Financial & Quantitative Analysis**_, 55 (2020), 1717 – 1754 (wi
 
 
 [Indirect Insider Trading](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3270095), 
-_**Journal of Financial & Quantitative Analysis**_, forthcoming (with B. Goldie, C. Jiang and P. Koch)
+_Journal of Financial & Quantitative Analysis_, forthcoming (with B. Goldie, C. Jiang and P. Koch)
 
 
 [See complete list of publications...](https://mbwintoki.github.io/publications)
