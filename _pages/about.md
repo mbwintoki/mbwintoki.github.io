@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Jide Wintoki is the Associate Dean of Graduate Programs and Capitol Federal Professor of Finance at the [University of Kansas](https://ku.edu/) [School of Business](https://business.ku.edu/). From 2018 to 2022 he served as Area Director of Analytics, Information, and Operations Management (AIO). His research interests include empirical corporate finance, international finance and applied econometrics. Prior to joining KU in 2008, he taught at the [Terry College of Business](http://www.terry.uga.edu) of the [University of Georgia](http://www.uga.edu/) where he also obtained a Ph.D. in Finance. In addition to research, Jide teaches classes in Corporate Financial Policy, Business Investments, Business Finance and International Finance at the undergraduate and graduate level. Jide has also served as Visiting Financial Economist in the Division of Economic and Risk Analysis [(DERA)](https://www.sec.gov/dera) of the U.S. Securities and Exchange Commission (S.E.C.).
+Jide Wintoki is the Associate Dean of Graduate Programs and Capitol Federal Professor of Finance at the [University of Kansas](https://ku.edu/) [School of Business](https://business.ku.edu/). From 2019 to 2022 he also served as Area Director of Analytics, Information, and Operations Management (AIO). His research interests include empirical corporate finance, international finance and applied econometrics. Prior to joining KU in 2008, he taught at the [Terry College of Business](http://www.terry.uga.edu) of the [University of Georgia](http://www.uga.edu/) where he also obtained a Ph.D. in Finance. In addition to research, Jide teaches classes in Corporate Financial Policy, Business Investments, Business Finance and International Finance at the undergraduate and graduate level. Jide has also served as Visiting Financial Economist in the Division of Economic and Risk Analysis [(DERA)](https://www.sec.gov/dera) of the U.S. Securities and Exchange Commission (S.E.C.).
 
 Prior to his studies at Georgia, Jide completed his undergraduate studies in Electrical Engineering at the [University of Lagos](http://www.unilag.edu.ng/). He also worked in a variety of positions with [ExxonMobil](http://www.exxonmobil.com), [Procter & Gamble](http://www.pg.com), and [NLNG](http://www.nlng.com).
 
@@ -42,7 +42,7 @@ _Management Science_, 64 (2018), 3241 – 3268 (with C. Jiang, T. Kubick and M. 
 _Journal of Financial & Quantitative Analysis_, 55 (2020), 1717 – 1754 (with Y. Xi)
 
 
-[Indirect Insider Trading](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3270095). 
+[Indirect Insider Trading](https://doi.org/10.1017/S0022109022001119). 
 _Journal of Financial & Quantitative Analysis_, forthcoming (with B. Goldie, C. Jiang and P. Koch)
 
 
