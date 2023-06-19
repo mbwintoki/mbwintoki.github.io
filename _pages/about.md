@@ -23,7 +23,7 @@ Endogeneity and the Dynamics of Internal Corporate Governance.
 
 
 Director Networks and Informed Traders. 
-[Journal of Accounting & Economics(http://dx.doi.org/10.1016/j.jacceco.2016.03.003), 62 (2016), 1 – 23 (with F. Akbas and F. Meschke)
+[Journal of Accounting & Economics](http://dx.doi.org/10.1016/j.jacceco.2016.03.003), 62 (2016), 1 – 23 (with F. Akbas and F. Meschke)
 
 
 Do CMO Incentives Matter? An Empirical Investigation of CMO Compensation and Its Impact on Firm Performance.
