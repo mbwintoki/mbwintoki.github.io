@@ -15,7 +15,7 @@ Prior to his studies at Georgia, Jide completed his undergraduate studies in Ele
 
 Selected Publications
 ------
-[Implications of Data Screens on Merger and Acquisition Analysis: A Large Sample Study of Mergers and Acquisitions from 1992–2009](http://dx.doi.org/10.1093/rfs/hhr010). _Review of Financial Studies_, 24 (2011), 2316 – 2357 (with J. Netter and M. Stegemoller) 
+Implications of Data Screens on Merger and Acquisition Analysis: A Large Sample Study of Mergers and Acquisitions from 1992–2009. [Review of Financial Studies](http://dx.doi.org/10.1093/rfs/hhr010), 24 (2011), 2316 – 2357 (with J. Netter and M. Stegemoller) 
 
 
 [Endogeneity and the Dynamics of Internal Corporate Governance](http://dx.doi.org/10.1016/j.jfineco.2012.03.005). 
