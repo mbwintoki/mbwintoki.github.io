@@ -43,7 +43,7 @@ Partisan Bias in Fund Portfolios.
 
 
 Indirect Insider Trading. 
-[Journal of Financial & Quantitative Analysis](https://doi.org/10.1017/S0022109022001119), forthcoming (with B. Goldie, C. Jiang and P. Koch)
+[Journal of Financial & Quantitative Analysis](https://doi.org/10.1017/S0022109022001119), 58 (2023), 2327 – 2364 (with B. Goldie, C. Jiang and P. Koch)
 
 
 [See complete list of publications...](https://mbwintoki.github.io/publications)
