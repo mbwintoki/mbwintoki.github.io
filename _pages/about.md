@@ -15,35 +15,35 @@ Prior to his studies at Georgia, Jide completed his undergraduate studies in Ele
 
 Selected Publications
 ------
-Implications of Data Screens on Merger and Acquisition Analysis: A Large Sample Study of Mergers and Acquisitions from 1992–2009. [Review of Financial Studies](http://dx.doi.org/10.1093/rfs/hhr010), 24 (2011), 2316 – 2357 (with J. Netter and M. Stegemoller) 
+Implications of data screens on merger and acquisition analysis: A large sample study of mergers and acquisitions from 1992–2009. [Review of Financial Studies](http://dx.doi.org/10.1093/rfs/hhr010), 24 (2011), 2316 – 2357 (with J. Netter & M. Stegemoller) 
 
 
-Endogeneity and the Dynamics of Internal Corporate Governance. 
-[Journal of Financial Economics](http://dx.doi.org/10.1016/j.jfineco.2012.03.005), 105 (2012), 581 – 606 (with J. Linck and J. Netter)
+Endogeneity and the dynamics of internal corporate governance. 
+[Journal of Financial Economics](http://dx.doi.org/10.1016/j.jfineco.2012.03.005), 105 (2012), 581 – 606 (with J. Linck & J. Netter)
 
 
-Director Networks and Informed Traders. 
-[Journal of Accounting & Economics](http://dx.doi.org/10.1016/j.jacceco.2016.03.003), 62 (2016), 1 – 23 (with F. Akbas and F. Meschke)
+Director networks and informed traders. 
+[Journal of Accounting & Economics](http://dx.doi.org/10.1016/j.jacceco.2016.03.003), 62 (2016), 1 – 23 (with F. Akbas & F. Meschke)
 
 
-Do CMO Incentives Matter? An Empirical Investigation of CMO Compensation and Its Impact on Firm Performance.
-[Management Science](http://dx.doi.org/10.1287/mnsc.2015.2418), 63 (2017), 1993 – 2015 (with N. Bansal, K. Joseph and M. Ma)
+Do CMO incentives matter?  An empirical investigation of CMO compensation and its impact on firm performance.
+[Management Science](http://dx.doi.org/10.1287/mnsc.2015.2418), 63 (2017), 1993 – 2015 (with N. Bansal, K. Joseph, & M. Ma)
 
 
-Foreign Independent Directors and the Quality of Legal Institutions.
-[Journal of International Business Studies](http://dx.doi.org/10.1057/s41267-016-0033-0), 48 (2017), 267 – 292 (with M. Miletkov and A. Poulsen)
+Foreign independent directors and the quality of legal institutions.
+[Journal of International Business Studies](http://dx.doi.org/10.1057/s41267-016-0033-0), 48 (2017), 267 – 292 (with M. Miletkov & A. Poulsen)
 
 
-Offshore Expertise for Onshore Companies: Director Connections to Island Tax Havens and Corporate Tax Policy. 
-[Management Science](http://dx.doi.org/10.1287/mnsc.2017.2776), 64 (2018), 3241 – 3268 (with C. Jiang, T. Kubick and M. Miletkov)
+Offshore expertise for onshore companies: Director connections to island tax havens and corporate tax policy. 
+[Management Science](http://dx.doi.org/10.1287/mnsc.2017.2776), 64 (2018), 3241 – 3268 (with C. Jiang, T. Kubick, & M. Miletkov)
 
 
-Partisan Bias in Fund Portfolios. 
+Partisan bias in fund portfolios. 
 [Journal of Financial & Quantitative Analysis](https://doi.org/10.1017/S0022109019000383), 55 (2020), 1717 – 1754 (with Y. Xi)
 
 
-Indirect Insider Trading. 
-[Journal of Financial & Quantitative Analysis](https://doi.org/10.1017/S0022109022001119), 58 (2023), 2327 – 2364 (with B. Goldie, C. Jiang and P. Koch)
+Indirect insider trading. 
+[Journal of Financial & Quantitative Analysis](https://doi.org/10.1017/S0022109022001119), 58 (2023), 2327 – 2364 (with B. Goldie, C. Jiang, & P. Koch)
 
 
 [See complete list of publications...](https://mbwintoki.github.io/publications)
