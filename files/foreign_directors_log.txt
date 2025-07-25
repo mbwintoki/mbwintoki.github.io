@@ -1,0 +1,375 @@
+Contains data from FID_November9_2012.dta
+  obs:       373,664                          
+ vars:           256                          
+ size: 1,026,081,344                          
+--------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+--------------------------------------------------------------------------------
+bvdep_id_number str16  %16s                   BvDEP ID Number
+dividend_yield  double %12.0g                 Dividend yield
+price___earni~o double %12.0g                 Price / Earnings ratio
+market_capita~l double %12.0g                 Market capitalisation /
+                                                Shareholders funds
+market_cap__a~_ double %12.0g                 Market Cap# at closing date mil
+                                                USD
+total_assets_~d double %12.0g                 Total Assets th USD
+shareholders_~d double %12.0g                 Shareholders Funds th USD
+return_on_sha~_ double %12.0g                 Return on Shareh# Funds (%)
+return_on_tot~_ double %12.0g                 Return on Total Assets (%)
+solvency_rati~_ double %12.0g                 Solvency Ratio (%)
+year            double %12.0g                 year
+gearing         double %12.0g                 
+net_sales_th_us double %12.0g                 
+research___de~s double %12.0g                 
+total_liabili~s double %12.0g                 
+bvdep_id_numb~2 str16  %16s                   BvDEP_ID_Number2
+isin_number     str16  %16s                   ISIN Number
+company_name    str200 %200s                  Company name
+us_sic__core_~n str200 %200s                  US SIC, core code description
+sedol_number    str8   %8s                    SEDOL Number
+status          str42  %42s                   Status
+date_of_incor~n str10  %10s                   Date of incorporation
+ipo_date        str10  %10s                   IPO date
+us_sic__core_~e double %12.0g                 US SIC, Core code
+equity_price_~s double %12.0g                 Equity Price Volatility 360 days
+recommendatio~e double %12.0g                 Recommendation - Number of brokers
+                                                (75 days)
+accounting_st~r str12  %12s                   Accounting standard last year
+accounting_st~1 str12  %12s                   Accounting standard last year-1
+accounting_st~2 str12  %12s                   Accounting standard last year-2
+repscore_last~r double %12.0g                 
+repscore_last~1 double %12.0g                 
+repscore_last~2 double %12.0g                 
+reportscore     double %12.0g                 
+ifrs_last_year  double %12.0g                 
+ifrs_last_yea~1 double %12.0g                 
+ifrs_last_yea~2 double %12.0g                 
+ifrsall         double %12.0g                 
+ifrs_last_yea~e double %12.0g                 
+ifrsall_repor~e double %12.0g                 
+tf_closelyhel~t double %12.0g                 
+tf_entitykey    str10  %10s                   TF#EntityKey
+tf_adrindicator double %12.0g                 TF#ADRIndicator
+tf_icbindustry  double %12.0g                 TF#ICBIndustry
+usexchange_dum  double %12.0g                 
+indexpart_dum   double %12.0g                 
+big5audit_dum   double %12.0g                 
+bvdep_indep__~_ str2   %2s                    BvDEP Indep# Ind#
+no_of_recorde~s double %12.0g                 No of recorded shareholders
+fsholder_num    double %12.0g                 
+fsholder_dum    double %12.0g                 
+fown_dir        double %12.0g                 
+fown_tot        double %12.0g                 
+max_owner_dir   double %12.0g                 
+max_owner_tot   double %12.0g                 
+largestowner_~r double %12.0g                 
+largestowner_~t double %12.0g                 
+fbank_own_dir   double %12.0g                 
+fbank_own_tot   double %12.0g                 
+ffinfirm_own_~r double %12.0g                 
+ffinfirm_own_~t double %12.0g                 
+ffound_own_dir  double %12.0g                 
+ffound_own_tot  double %12.0g                 
+fhedgefnd_own~r double %12.0g                 
+fhedgefnd_own~t double %12.0g                 
+findfirm_own_~r double %12.0g                 
+findfirm_own_~t double %12.0g                 
+finsurfirm_ow~r double %12.0g                 
+finsurfirm_ow~t double %12.0g                 
+fmutualfund_o~r double %12.0g                 
+fmutualfund_o~t double %12.0g                 
+fpequity_own_~r double %12.0g                 
+fpequity_own_~t double %12.0g                 
+fpublic_own_dir double %12.0g                 
+fpublic_own_tot double %12.0g                 
+fventure_own_~r double %12.0g                 
+fventure_own_~t double %12.0g                 
+ffamily_own_dir double %12.0g                 
+ffamily_own_tot double %12.0g                 
+fgovernment_o~r double %12.0g                 
+fgovernment_o~t double %12.0g                 
+bank_own_dir    double %12.0g                 
+bank_own_tot    double %12.0g                 
+finfirm_own_dir double %12.0g                 
+finfirm_own_tot double %12.0g                 
+found_own_dir   double %12.0g                 
+found_own_tot   double %12.0g                 
+hedgefnd_own_~r double %12.0g                 
+hedgefnd_own_~t double %12.0g                 
+indfirm_own_dir double %12.0g                 
+indfirm_own_tot double %12.0g                 
+insurfirm_own~r double %12.0g                 
+insurfirm_own~t double %12.0g                 
+mutualfund_ow~r double %12.0g                 
+mutualfund_ow~t double %12.0g                 
+pequity_own_dir double %12.0g                 
+pequity_own_tot double %12.0g                 
+public_own_dir  double %12.0g                 
+public_own_tot  double %12.0g                 
+venture_own_dir double %12.0g                 
+venture_own_tot double %12.0g                 
+family_own_dir  double %12.0g                 
+family_own_tot  double %12.0g                 
+government_ow~r double %12.0g                 
+government_ow~t double %12.0g                 
+insider_own_dir double %12.0g                 
+insider_own_tot double %12.0g                 
+total_owner_dir double %12.0g                 
+sicode3         double %12.0g                 
+sic2digit       str12  %12s                   
+controlsholder  double %12.0g                 
+number_segments double %12.0g                 
+number_of_emp~s double %12.0g                 Number of employees
+freecf          double %12.0g                 
+randd           double %12.0g                 
+randd_sales     double %12.0g                 
+year_of_incor~n double %12.0g                 Year_of_incorporation
+firm_age        double %12.0g                 
+country____ad~_ str50  %50s                   Country - (address of incorp#)
+country____tr~_ str50  %50s                   Country - (trading address)
+coun__try_co~p_ str2   %2s                    Coun- try code- (incorp)
+coun__try_co~r_ str2   %2s                    Coun- try code- (trad#addr)
+num_director    double %12.0g                 
+num_independ~ct double %12.0g                 
+num_independent double %12.0g                 
+num_independe~d double %12.0g                 
+num_fidstrict   double %12.0g                 
+num_fid         double %12.0g                 
+num_fidbroad    double %12.0g                 
+num_busydirec~r double %12.0g                 
+dum_fidstrict   double %12.0g                 
+dum_fid         double %12.0g                 
+dum_fidbroad    double %12.0g                 
+dum_dualbodme~t double %12.0g                 
+dum_dualbodme~d double %12.0g                 
+dum_ceochair    double %12.0g                 
+dum_unclassif~d double %12.0g                 
+pcnt_fidstrict  double %12.0g                 
+pcnt_fid        double %12.0g                 
+pcnt_fidbroad   double %12.0g                 
+pcnt_indepen~ct double %12.0g                 
+pcnt_indepen~nt double %12.0g                 
+pcnt_independ~d double %12.0g                 
+pcnt_busydire~r double %12.0g                 
+wdi_country_c~e str4   %4s                    WDI Country Code
+oecd            double %12.0g                 OECD
+island          double %12.0g                 Island
+avgyrtotals~200 double %12.0g                 AvgYrTotalSchooling25andover_2005
+world_region1   str26  %26s                   World region1
+world_region2   str32  %32s                   World region2
+legor           str12  %12s                   legor
+eng             double %12.0g                 eng
+fren            double %12.0g                 fren
+ger             double %12.0g                 ger
+scan            double %12.0g                 scan
+soc             double %12.0g                 soc
+religion        str10  %10s                   religion
+buddhist        double %12.0g                 buddhist
+catholic        double %12.0g                 catholic
+muslim          double %12.0g                 muslim
+ortho           double %12.0g                 ortho
+protest         double %12.0g                 protest
+creditor_r~2003 double %12.0g                 creditor rigths in 2003
+anti_self_dea~x double %12.0g                 Anti-self-dealing index
+revised_anti_~x double %12.0g                 Revised Anti-director Index
+corrected_ant~x double %12.0g                 Corrected Anti-director Index
+legal_structu~_ double %12.0g                 Legal Structure and Security of
+                                                Property Rights 2005
+listed_domest~l double %12.0g                 Listed domestic companies, total
+market_capita~_ double %12.0g                 Market capitalization of listed
+                                                companies (% of GDP)
+stocks_traded~_ double %12.0g                 Stocks traded, turnover ratio (%)
+domestic_cred~o double %12.0g                 Domestic credit to private sector
+                                                (% of GDP)
+gdp__constant~_ double %12.0g                 GDP (constant 2000 US$)
+gdp_per_capit~s double %12.0g                 GDP per capita (constant 2000 US$)
+population__t~l double %12.0g                 Population, total
+dum_fidstrict~d double %12.0g                 
+dum_fid_same_~d double %12.0g                 Same OECD
+dum_fidbroad_~d double %12.0g                 
+dum_fidstrict~1 double %12.0g                 
+dum_fid_same_~1 double %12.0g                 Same world region
+dum_fidbroad_~1 double %12.0g                 
+dum_fidstrict~2 double %12.0g                 
+dum_fid_same_~2 double %12.0g                 Same world region2
+dum_fidbroad_~2 double %12.0g                 
+dum_fidstrict~r double %12.0g                 
+dum_fid_same_~r double %12.0g                 Same legal origin
+dum_fidbroad_~r double %12.0g                 
+dum_fidstrict~n double %12.0g                 
+dum_fid_same_~n double %12.0g                 Same religion
+dum_fidbroad_~n double %12.0g                 
+avg_dir_schoo~r double %12.0g                 dir_AvgYrTotalSchooling25andover_2
+                                                > 005
+avg_dir_credi~s double %12.0g                 dir_creditor rigths in 2003
+avg_dir_anti_~x double %12.0g                 dir_Anti-self-dealing index
+avg_dir_revis~d double %12.0g                 dir_Revised Anti-director Index
+avg_dir_corre~d double %12.0g                 dir_Corrected Anti-director Index
+avg_dir_legal~c double %12.0g                 dir_Legal Structure and Security
+                                                of Property Rights 2005
+avg_dir_liste~p double %12.0g                 dir_Listed domestic companies,
+                                                total
+avg_dir_marke~p double %12.0g                 dir_Market capitalization of
+                                                listed companies (% of GDP)
+avg_dir_stock~r double %12.0g                 dir_Stocks traded, turnover ratio
+                                                (%)
+avg_dir_domes~e double %12.0g                 dir_Domestic credit to private
+                                                sector (% of GDP)
+avg_dir_gdp__~t double %12.0g                 dir_GDP (constant 2000 US$)
+avg_dir_gdp_p~a double %12.0g                 dir_GDP per capita (constant 2000
+                                                US$)
+avg_dir_popul~n double %12.0g                 dir_Population, total
+diff_schooling  double %12.0g                 
+diff_creditor~s double %12.0g                 
+diff_anti_sel~g double %12.0g                 
+diff_revised_~r double %12.0g                 
+diff_correcte~r double %12.0g                 
+diff_legal_st~e double %12.0g                 
+diff_listed_d~p double %12.0g                 
+diff_market_cap double %12.0g                 
+diff_stocks_t~r double %12.0g                 
+diff_domestic~e double %12.0g                 
+diff_gdp__const double %12.0g                 
+diff_gdp_per_~a double %12.0g                 
+diff_population double %12.0g                 
+better_school~g double %12.0g                 
+better_credit~s double %12.0g                 
+better_anti_s~g double %12.0g                 
+better_revise~r double %12.0g                 
+better_correc~r double %12.0g                 
+better_legal_~e double %12.0g                 
+better_listed~p double %12.0g                 
+better_market~p double %12.0g                 
+better_stocks~r double %12.0g                 
+better_domest~e double %12.0g                 
+better_gdp__c~t double %12.0g                 
+better_gdp_pe~a double %12.0g                 
+better_popula~n double %12.0g                 
+iso3_cntryinc   str4   %4s                    iso3_cntryinc
+dum_contig      double %12.0g                 contig
+dum_comlang_off double %12.0g                 comlang_off
+dum_comlang_e~o double %12.0g                 comlang_ethno
+dum_colony      double %12.0g                 colony
+max_dist        double %12.0g                 dist
+dum_usfidbroad  double %12.0g                 
+ifrs_adopt_year double %12.0g                 IFRS_adopt_year
+ifrs_not_perm~d str2   %2s                    IFRS not Permitted
+voluntaryifrs   double %12.0g                 
+voluntaryifrs~m double %12.0g                 
+foreign_assets  double %12.0g                 
+foreign_sales   double %12.0g                 
+accthbslastyr   str48  %48s                   
+accthbslastyr_1 str48  %48s                   
+accthbslastyr_2 str62  %62s                   
+ifrslastyr_hbs  double %12.0g                 
+ifrslastyr_1hbs double %12.0g                 
+ifrslastyr_2hbs double %12.0g                 
+ifrsall_hbs     double %12.0g                 
+ifrslastyr_hb~e double %12.0g                 
+ifrsall_hbs_r~e double %12.0g                 
+voluntary~s_hbs double %12.0g                 
+voluntary~m_hbs double %12.0g                 
+dum_fidsholder  double %12.0g                 
+dum_fidsubsid~y double %12.0g                 
+dum_fsubsidiary double %12.0g                 
+foreign_assets1 double %12.0g                 
+foreign_sales1  double %12.0g                 
+--------------------------------------------------------------------------------
+
+rename usexchange_dum adr
+
+rename coun__try_co~p_ country
+
+egen comn = group(bvdep_id_numb~2)
+
+rename total_assets_~d assets
+
+rename total_liabili~s liabilities
+
+gen logassets = ln(assets)
+
+rename net_sales_th_us sales
+
+gen pcnt_fidbroad1 = pcnt_fidbroad*100
+
+gen leverage = liabilities/assets
+
+rename num_busydirec~r busydirector
+
+gen independence = num_independent/num_director
+
+gen busyness = busydirector/num_director
+
+gen board_size = ln(num_director)
+
+gen logage = ln(1 + firm_age)
+
+
+rename return_on_tot~_ roa
+
+rename dum_dualbodme~d dualboard
+
+rename market_capita~l market
+
+rename market_cap__at_closing_date_mil_ market
+
+gen mtb = market*1000/assets
+
+
+rename tf_closelyhel~t insider_own_tot1
+
+winsor leverage, gen(leverage1) p(0.01) highonly
+
+
+winsor roa, gen(roa1) p(0.01)
+
+winsor mtb, gen(mtb1) p(0.01)
+
+
+rename legal_structu~_ legal_index
+
+ 
+rename market_capita~_ market_cap
+
+
+rename gdp_per_capit~s gdp_per_capita
+
+gen loggdp = ln(1 + gdp_per_capita)
+
+rename avgyrtotals~200 years_of_school
+
+gen logschool = ln(1 + years_of_school)
+
+rename population__t~l pop
+
+gen logpop = ln(1 + pop)
+
+
+
+
+/* Within country determinants - Table 3 */
+
+xi: probit dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
+logage board_size insider_own_tot1 busyness dualboard i.year i.country, robust cluster(comn);
+
+xi: regress pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets
+sales_growth1 leverage1 logage board_size insider_own_tot1 busyness dualboard i.year i.country, robust cluster(comn);
+
+xi: tobit pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
+logage board_size insider_own_tot1 busyness dualboard i.year i.country, ll(0) ul(100) robust cluster(comn);
+
+
+/* Across country determinants - Table 3 */
+
+xi: probit dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
+logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, robust cluster(comn);
+
+xi: regress pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets
+sales_growth1 leverage1 logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, robust cluster(comn);
+
+xi: tobit pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
+logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, ll(0) ul(100) robust cluster(comn);
+
+
+
