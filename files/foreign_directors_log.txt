@@ -1,4 +1,4 @@
-Contains data from FID_November9_2012.dta
+Contains data from FID_March31_2014.dta
   obs:       373,664                          
  vars:           256                          
  size: 1,026,081,344                          
@@ -276,12 +276,17 @@ dum_fsubsidiary double %12.0g
 foreign_assets1 double %12.0g                 
 foreign_sales1  double %12.0g                 
 --------------------------------------------------------------------------------
-
-rename usexchange_dum adr
+drop if island == 1
 
 rename coun__try_co~p_ country
 
-egen comn = group(bvdep_id_numb~2)
+drop if country == "US"
+
+rename usexchange_dum adr
+
+rename sicode3 icode
+
+egen comn = group(bvdep_id_numb~3)
 
 rename total_assets_~d assets
 
@@ -305,33 +310,35 @@ gen board_size = ln(num_director)
 
 gen logage = ln(1 + firm_age)
 
-
 rename return_on_tot~_ roa
 
 rename dum_dualbodme~d dualboard
 
-rename market_capita~l market
 
 rename market_cap__at_closing_date_mil_ market
 
-gen mtb = market*1000/assets
+gen mtb = market*1000/(assets)
 
+
+replace fown_tot = 100 if fown_tot > 100
 
 rename tf_closelyhel~t insider_own_tot1
+
+replace insider_own_tot1 = 0 if insider_own_tot1 == .
+
+replace leverage = 0 if leverage == .
 
 winsor leverage, gen(leverage1) p(0.01) highonly
 
 
 winsor roa, gen(roa1) p(0.01)
 
-winsor mtb, gen(mtb1) p(0.01)
+winsor mtb, gen(mtb1) p(0.01) highonly
 
 
 rename legal_structu~_ legal_index
 
- 
 rename market_capita~_ market_cap
-
 
 rename gdp_per_capit~s gdp_per_capita
 
@@ -345,16 +352,62 @@ rename population__t~l pop
 
 gen logpop = ln(1 + pop)
 
+rename better_legal_~e better_legal
+
+rename diff_legal_st~e diff_legal
+
+gen diff_legal1 = dum_fidbroad*diff_legal
+
+replace better_legal = 0 if better_legal == .
+
+replace diff_legal = 0 if diff_legal == .
+
+xtset comn year
+
+gen sales_growth = (ln(1 + sales) - ln(1 + l.sales))*100/ln(1 + l.sales)
+
+winsor sales_growth, gen(sales_growth1) p(0.01) highonly
+
+
+gen fidbroad_legal = dum_fidbroad*legal_index
+
+xtile legal = legal_index if legal_index != . , nq(4); 
+
+gen legal1 = .
+
+replace legal1 = 1 if legal == 4
+
+replace legal1 = 0 if legal == 1 | legal == 2 | legal == 3
+
+
+gen high = legal1;
+
+gen dum_fidbroad_high = dum_fidbroad*high;
+
+gen difference1 = diff_legal;
+
+replace difference1 = 0 if diff_legal <= 0;
+
+
+#delimit;
 
 
 
 /* Within country determinants - Table 3 */
 
+/* Probit */
+
 xi: probit dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
 logage board_size insider_own_tot1 busyness dualboard i.year i.country, robust cluster(comn);
 
+
+/* OLS */
+
 xi: regress pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets
 sales_growth1 leverage1 logage board_size insider_own_tot1 busyness dualboard i.year i.country, robust cluster(comn);
+
+
+/* Tobit */
 
 xi: tobit pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
 logage board_size insider_own_tot1 busyness dualboard i.year i.country, ll(0) ul(100) robust cluster(comn);
@@ -362,14 +415,90 @@ logage board_size insider_own_tot1 busyness dualboard i.year i.country, ll(0) ul
 
 /* Across country determinants - Table 3 */
 
+
+/* Probit */
+
 xi: probit dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
 logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, robust cluster(comn);
+
+
+/* OLS */
 
 xi: regress pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets
 sales_growth1 leverage1 logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, robust cluster(comn);
 
+
+
+/* Tobit */
+
 xi: tobit pcnt_fidbroad1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 
 logage board_size insider_own_tot1 busyness dualboard i.year market_cap loggdp logpop years_of_school legal_index oecd, ll(0) ul(100) robust cluster(comn);
+
+
+
+/* Effect of foreign directors on performance - Table 4: Columns 1 - 3 */
+
+/* Fixed Effects */
+
+xi: xtreg roa1 dum_fidbroad dum_fidbroad_high foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size
+independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+
+/* IV-2SLS */
+
+xi: xtivreg2 roa1 (dum_fidbroad dum_fidbroad_high = l.num_local_directors l.loglisted) foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 
+leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+
+/* GMM */
+
+xi: xtabond2 roa1 l.roa1 l2.roa1 dum_fidbroad dum_fidbroad_high foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, gmm(roa1 dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard dum_fidbroad_high market_cap logpop loggdp, lag(3 4) collapse) iv(i.year) twostep robust cluster(comn);
+
+
+/* Effect of foreign directors on performance - Table 4: Columns 4 - 6 */
+
+/* Fixed Effects */
+
+xi: xtreg roa1 dum_fidbroad dum_fidbroad_legal foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size
+independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+
+/* IV-2SLS */
+
+xi: xtivreg2 roa1 (dum_fidbroad dum_fidbroad_legal = l.num_local_directors l.loglisted) foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 
+leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+
+/* GMM */
+
+xi: xtabond2 roa1 l.roa1 l2.roa1 dum_fidbroad dum_fidbroad_legal foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, gmm(roa1 dum_fidbroad dum_fidbroad_legal foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp, lag(3 4) collapse) iv(i.year) twostep robust cluster(comn);
+
+
+
+
+/* Effect of foreign directors on performance when director comes from country with better legal institutions - Table 5: Columns 1 - 3 */
+
+
+xi: xtreg roa1 dum_fidbroad better_legal foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size
+independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+xi: xtivreg2 roa1 (dum_fidbroad better_legal = l.num_local_directors l.loglisted) foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 
+leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+xi: xtabond2 roa1 l.roa1 l2.roa1 dum_fidbroad better_legal foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, gmm(roa1 dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard dum_fidbroad_high market_cap logpop loggdp, lag(3 4) collapse) iv(i.year) twostep robust cluster(comn);
+
+
+/* Effect of foreign directors on performance when director comes from country with better legal institutions  - Table 5: Columns 4 - 6 */
+
+xi: xtreg roa1 dum_fidbroad difference1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size
+independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+xi: xtivreg2 roa1 (dum_fidbroad difference1 = l.num_local_directors l.loglisted) foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 
+leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, fe robust cluster(comn);
+
+xi: xtabond2 roa1 l.roa1 l2.roa1 dum_fidbroad difference1 foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard market_cap logpop loggdp i.year, gmm(roa1 dum_fidbroad foreign_sales1 foreign_assets1 dum_fsubsidiary fown_tot adr logassets sales_growth1 leverage1 logage board_size independence insider_own_tot1 busyness dualboard dum_fidbroad_high market_cap logpop loggdp, lag(3 4) collapse) iv(i.year) twostep robust cluster(comn);
+
+
 
 
 
