@@ -12,180 +12,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;1,18..72,400;1,18..72,500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F7F6F3;
-    --card:#FFFFFF;
-    --ink:#1B1B20;
-    --slate:#6A6A73;
-    --crimson:#9E1B32;
-    --crimson-deep:#7E1428;
-    --line:#E6E4DD;
-    --display:'Newsreader', Georgia, 'Times New Roman', serif;
-    --body:'IBM Plex Sans', system-ui, -apple-system, Segoe UI, sans-serif;
-    --mono:'IBM Plex Mono', ui-monospace, monospace;
-    --wrap:1080px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:17px;
-    line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  a{color:var(--crimson);text-decoration:none;}
-  a:hover{color:var(--crimson-deep);text-decoration:underline;text-underline-offset:2px;}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
-
-  /* Header */
-  header.site{
-    position:sticky;top:0;z-index:20;
-    background:rgba(247,246,243,0.86);
-    backdrop-filter:saturate(150%) blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:baseline;justify-content:space-between;gap:18px;
-       max-width:var(--wrap);margin:0 auto;padding:14px 28px;flex-wrap:wrap;}
-  .brand{font-family:var(--display);font-weight:500;font-size:1.18rem;letter-spacing:0.01em;color:var(--ink);}
-  .brand:hover{text-decoration:none;color:var(--ink);}
-  .brand .mark{color:var(--crimson);}
-  nav.links{display:flex;gap:22px;flex-wrap:wrap;}
-  nav.links a{
-    font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);
-    font-weight:500;
-  }
-  nav.links a:hover{color:var(--crimson-deep);text-decoration:none;}
-
-  /* Hero */
-  .hero{padding:64px 0 40px;}
-  .hero-grid{display:grid;grid-template-columns:1fr 232px;gap:48px;align-items:center;}
-  .eyebrow{font-family:var(--mono);font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;
-           color:var(--crimson);margin:0 0 18px;}
-  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,6vw,4.1rem);
-           line-height:1.02;margin:0 0 14px;letter-spacing:-0.01em;}
-  .hero .role{font-family:var(--display);font-style:italic;font-size:1.32rem;color:var(--ink);margin:0 0 18px;}
-  .hero .lede{font-size:1.06rem;color:var(--slate);max-width:46ch;margin:0 0 26px;}
-  .actions{display:flex;flex-wrap:wrap;gap:10px;}
-  .btn{display:inline-block;font-size:0.86rem;font-weight:500;letter-spacing:0.02em;
-       padding:9px 16px;border:1px solid var(--line);border-radius:2px;background:var(--card);color:var(--ink);}
-  .btn:hover{border-color:var(--crimson);color:var(--crimson-deep);text-decoration:none;}
-  .btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff;}
-  .btn.primary:hover{background:var(--crimson-deep);border-color:var(--crimson-deep);color:#fff;}
-  .portrait{width:232px;height:288px;object-fit:cover;border-radius:3px;
-            box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(27,27,32,0.45);}
-  .portrait-fallback{width:232px;height:288px;border-radius:3px;background:var(--ink);color:var(--paper);
-            display:flex;align-items:center;justify-content:center;font-family:var(--display);
-            font-size:3.4rem;letter-spacing:0.04em;}
-
-  /* Sections */
-  section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 30px;}
-  .sec-head .num{font-family:var(--mono);font-size:0.78rem;color:var(--crimson);letter-spacing:0.1em;}
-  .sec-head h2{font-family:var(--display);font-weight:500;font-size:1.9rem;margin:0;letter-spacing:-0.01em;}
-
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1fr 280px;gap:48px;}
-  .about p{margin:0 0 18px;}
-  .facts{font-size:0.92rem;align-self:start;}
-  .facts dl{margin:0;border-top:2px solid var(--ink);}
-  .facts dt{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
-            color:var(--crimson);padding:14px 0 2px;border-top:1px solid var(--line);}
-  .facts dl > div:first-child dt{border-top:0;}
-  .facts dd{margin:0 0 4px;color:var(--ink);line-height:1.45;}
-
-  /* Selected publications (within About) */
-  .sel{margin-top:42px;padding-top:34px;border-top:1px solid var(--line);}
-  .sel .eyebrow{margin:0 0 16px;}
-  .sel-item{padding:13px 0;border-top:1px solid var(--line);}
-  .sel-item:first-of-type{border-top:0;}
-  .sel-item .t{font-weight:500;}
-  .sel-item .j{font-family:var(--display);font-style:italic;color:var(--ink);}
-  .sel-item .m{color:var(--slate);font-size:0.95rem;}
-  .sel-more{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:0.78rem;
-            letter-spacing:0.06em;}
-
-  /* Publications ledger */
-  .pubs{margin:0;}
-  .pub{display:grid;grid-template-columns:46px 1fr;gap:6px;padding:18px 0;border-top:1px solid var(--line);}
-  .pub:first-child{border-top:0;}
-  .pub .idx{font-family:var(--mono);font-size:0.9rem;color:var(--crimson);padding-top:2px;}
-  .pub .title{font-weight:500;}
-  .pub .meta{color:var(--slate);font-size:0.96rem;}
-  .pub .journal{font-family:var(--display);font-style:italic;font-size:1.02rem;color:var(--ink);}
-  .pub .with{color:var(--slate);font-size:0.94rem;}
-  .pub .note{font-size:0.86rem;color:var(--slate);margin-top:4px;line-height:1.5;}
-  .pub .note .tag{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;
-                  color:var(--crimson);margin-right:7px;}
-
-  /* Working papers */
-  .wp{padding:16px 0;border-top:1px solid var(--line);}
-  .wp:first-child{border-top:0;}
-  .wp .title{font-weight:500;}
-  .wp .meta{color:var(--slate);font-size:0.95rem;}
-
-  /* Teaching */
-  .courses{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-           border:1px solid var(--line);border-radius:3px;overflow:hidden;}
-  .course{background:var(--card);padding:24px;}
-  .course .code{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;color:var(--crimson);}
-  .course h3{font-family:var(--display);font-weight:500;font-size:1.18rem;margin:6px 0 10px;line-height:1.2;}
-  .course p{margin:0;font-size:0.95rem;color:var(--slate);line-height:1.55;}
-
-  /* CV / contact */
-  .cv-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
-  .contact-list{display:flex;flex-wrap:wrap;gap:8px 26px;margin:24px 0 0;font-size:0.95rem;}
-  .contact-list span.label{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;
-            text-transform:uppercase;color:var(--crimson);margin-right:8px;}
-
-  footer.site{border-top:1px solid var(--line);padding:34px 0 56px;color:var(--slate);font-size:0.85rem;}
-  footer.site .disc{max-width:60ch;margin:8px 0 0;line-height:1.55;}
-
-  /* Reveal animation, opt-in and motion-safe */
-  html.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
-  html.js .reveal.in{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    html.js .reveal{opacity:1;transform:none;transition:none;}
-  }
-
-  @media (max-width:780px){
-    .hero-grid{grid-template-columns:1fr;gap:30px;}
-    .portrait,.portrait-fallback{width:172px;height:214px;order:-1;}
-    .portrait-fallback{font-size:2.6rem;}
-    .about-grid{grid-template-columns:1fr;gap:30px;}
-    .courses{grid-template-columns:1fr;}
-    nav.links{gap:14px;}
-    nav.links a{font-size:0.74rem;}
-  }
-  @media print{
-    header.site,.actions,footer.site .pt{display:none;}
-    body{background:#fff;font-size:11pt;}
-    section{border-top:1px solid #ccc;padding:18px 0;}
-    a{color:#000;text-decoration:none;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site">
   <div class="nav">
-    <a class="brand" href="#top">Jide <span class="mark">Wintoki</span></a>
+    <a class="brand" href="index.html">Jide <span class="mark">Wintoki</span></a>
     <nav class="links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#working">Working Papers</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#cv">CV</a>
+      <a href="index.html" class="current">About</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="files/Wintoki_CV_Print.pdf" target="_blank" rel="noopener">CV</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap" id="top">
+<main class="wrap">
 
   <!-- HERO -->
   <section class="hero" style="border-top:0;">
@@ -197,7 +40,7 @@
         <p class="lede">Dean of the University of Kansas School of Business and a scholar of corporate finance, governance, and international finance.</p>
         <div class="actions">
           <a class="btn primary" href="mailto:jwintoki@ku.edu">Email</a>
-          <a class="btn" href="files/Wintoki_CV_Print.pdf">Curriculum Vitae</a>
+          <a class="btn" href="files/Wintoki_CV_Print.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
           <a class="btn" href="https://scholar.google.com/citations?user=XpN9MScAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a>
           <a class="btn" href="https://www.linkedin.com/in/jide-wintoki-3094782/">LinkedIn</a>
         </div>
@@ -209,7 +52,7 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
+    <div class="sec-head reveal"><h2>About</h2></div>
     <div class="about-grid reveal">
       <div class="about">
         <p>Jide Wintoki is the Dean of the School and Henry D. Price Professor of Business at the <a href="https://ku.edu/">University of Kansas</a> <a href="https://business.ku.edu/">School of Business</a>. From 2020 to 2025 he served as Associate Dean of Graduate Programs and Capitol Federal Professor of Finance. He also served as Area Director of Analytics, Information, and Operations (AIO) from 2019 to 2022. His research interests include corporate finance and international finance.</p>
@@ -270,263 +113,7 @@
         <span class="j"><a href="https://doi.org/10.1017/S0022109022001119">Journal of Financial &amp; Quantitative Analysis</a></span>,
         <span class="m">58 (2023), 2327&ndash;2364. with B. Goldie, C. Jiang, &amp; P. Koch</span>
       </div>
-      <a class="sel-more" href="#research">See all 29 publications &rarr;</a>
-    </div>
-  </section>
-
-  <!-- RESEARCH / PUBLICATIONS -->
-  <section id="research">
-    <div class="sec-head reveal"><span class="num">02</span><h2>Publications</h2></div>
-    <div class="pubs reveal">
-
-      <div class="pub"><span class="idx">29</span><div>
-        <span class="title">Worker heterogeneity and the effect of noncompetes on firm performance.</span>
-        <span class="journal"><a href="https://doi.org/10.1111/jems.70040">Journal of Economics &amp; Management Strategy</a></span>, <span class="meta">in press.</span>
-        <span class="with">with Z. He</span>
-        <div class="note"><span class="tag">Award</span>Best Empirical Finance Paper, Southern Finance Association (SFA) Meeting 2022</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">28</span><div>
-        <span class="title">Highly skilled immigrants and local housing prices: Evidence from the H-1B visa lottery.</span>
-        <span class="journal"><a href="https://doi.org/10.1080/08965803.2025.2536358">Journal of Real Estate Research</a></span>, <span class="meta">in press.</span>
-        <span class="with">with E. Beracha, E. Kim, &amp; Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">27</span><div>
-        <span class="title">Shocks to CEO overconfidence and the deflation of hubris in acquisitions.</span>
-        <span class="journal"><a href="https://doi.org/10.1016/j.jempfin.2026.101745">Journal of Empirical Finance</a></span>, <span class="meta">88 (2026), 101745.</span>
-        <span class="with">with Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">26</span><div>
-        <span class="title">CFO social capital, liquidity management, and the market value of cash.</span>
-        <span class="journal"><a href="https://doi.org/10.1016/j.jbankfin.2024.107163">Journal of Banking &amp; Finance</a></span>, <span class="meta">163 (2024), 107163.</span>
-        <span class="with">with C. Anderson &amp; Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">25</span><div>
-        <span class="title">Indirect insider trading.</span>
-        <span class="journal"><a href="https://doi.org/10.1017/S0022109022001119">Journal of Financial &amp; Quantitative Analysis</a></span>, <span class="meta">58 (2023), 2327&ndash;2364.</span>
-        <span class="with">with B. Goldie, C. Jiang, &amp; P. Koch</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">24</span><div>
-        <span class="title">On the relation between innovation and housing prices: A metro level analysis of the US market.</span>
-        <span class="journal"><a href="https://doi.org/10.1007/s11146-021-09852-2">Journal of Real Estate Finance &amp; Economics</a></span>, <span class="meta">65 (2022), 622&ndash;644.</span>
-        <span class="with">with E. Beracha, Z. He, &amp; Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">23</span><div>
-        <span class="title">Insider trading and the legal expertise of corporate executives.</span>
-        <span class="journal"><a href="https://doi.org/10.1016/j.jbankfin.2021.106114">Journal of Banking &amp; Finance</a></span>, <span class="meta">127 (2021), 106114.</span>
-        <span class="with">with C. Jiang &amp; Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">22</span><div>
-        <span class="title">Partisan bias in fund portfolios.</span>
-        <span class="journal"><a href="https://doi.org/10.1017/S0022109019000383">Journal of Financial &amp; Quantitative Analysis</a></span>, <span class="meta">55 (2020), 1717&ndash;1754.</span>
-        <span class="with">with Y. Xi</span>
-        <div class="note"><span class="tag">Honor</span>JFQA High Impact Article in 2020</div>
-        <div class="note"><span class="tag">Media</span><a href="https://www.cnbc.com/2019/05/01/your-mutual-fund-may-have-a-political-bias-and-that-could-cost-you.html">CNBC</a>, <a href="https://www.reuters.com/article/us-markets-saft-idUSKBN16T2A9">Reuters</a>, <a href="https://www.wsj.com/articles/some-fund-managers-let-their-political-biases-show-when-picking-stocks-1494209283">Wall Street Journal</a>, <a href="https://www.barrons.com/articles/democrats-and-republicans-differ-as-investors-how-to-check-your-bias-51594810801">Barron's</a>, <a href="https://seekingalpha.com/article/4364942-political-biases-of-investment-managers">Seeking Alpha</a></div>
-      </div></div>
-
-      <div class="pub"><span class="idx">21</span><div>
-        <span class="title">Insider trading patterns.</span>
-        <span class="journal"><a href="https://doi.org/10.1016/j.jcorpfin.2020.101654">Journal of Corporate Finance</a></span>, <span class="meta">64 (2020), 101654.</span>
-        <span class="with">with L. Biggerstaff &amp; D. Cicero</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">20</span><div>
-        <span class="title">Friendly directors and the cost of regulatory compliance.</span>
-        <span class="journal"><a href="https://doi.org/10.1016/j.jcorpfin.2019.04.011">Journal of Corporate Finance</a></span>, <span class="meta">58 (2019), 112&ndash;141.</span>
-        <span class="with">with Y. Xi</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">19</span><div>
-        <span class="title">Offshore expertise for onshore companies: Director connections to island tax havens and corporate tax policy.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1287/mnsc.2017.2776">Management Science</a></span>, <span class="meta">64 (2018), 3241&ndash;3268.</span>
-        <span class="with">with C. Jiang, T. Kubick, &amp; M. Miletkov</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">18</span><div>
-        <span class="title">Foreign independent directors and the quality of legal institutions.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1057/s41267-016-0033-0">Journal of International Business Studies</a></span>, <span class="meta">48 (2017), 267&ndash;292.</span>
-        <span class="with">with M. Miletkov &amp; A. Poulsen</span>
-        <div class="note"><span class="tag">Data</span><a href="files/Supplemental_materials_to_accompany_MPW_2017_JIBS_paper_v2025.pdf">Supplemental material</a></div>
-      </div></div>
-
-      <div class="pub"><span class="idx">17</span><div>
-        <span class="title">Do CMO incentives matter? An empirical investigation of CMO compensation and its impact on firm performance.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1287/mnsc.2015.2418">Management Science</a></span>, <span class="meta">63 (2017), 1993&ndash;2015.</span>
-        <span class="with">with N. Bansal, K. Joseph, &amp; M. Ma</span>
-        <div class="note"><span class="tag">Award</span>Guy O. and Rosa Lee Mabry Award for Best Paper in the KU School of Business, 2017</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">16</span><div>
-        <span class="title">Director networks and informed traders.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jacceco.2016.03.003">Journal of Accounting &amp; Economics</a></span>, <span class="meta">62 (2016), 1&ndash;23.</span>
-        <span class="with">with F. Akbas &amp; F. Meschke</span>
-        <div class="note"><span class="tag">Featured</span><a href="https://corpgov.law.harvard.edu/2016/08/02/director-networks-and-informed-traders/">Harvard Law School Forum on Corporate Governance</a></div>
-      </div></div>
-
-      <div class="pub"><span class="idx">15</span><div>
-        <span class="title">The cost of innovation: R&amp;D and high cash holdings in U.S. firms.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jcorpfin.2016.10.006">Journal of Corporate Finance</a></span>, <span class="meta">41 (2016), 280&ndash;303.</span>
-        <span class="with">with Z. He</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">14</span><div>
-        <span class="title">Investor protection and the role of firm-level financial transparency in attracting foreign investment.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1111/fire.12072">Financial Review</a></span>, <span class="meta">24 (2015), 393&ndash;434.</span>
-        <span class="with">with B. Hansen &amp; M. Miletkov</span>
-        <div class="note"><span class="tag">Honor</span>Finalist, Financial Review Reader's Choice Best Paper Award, 2015</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">13</span><div>
-        <span class="title">Corporate boards and acquirer returns: International evidence.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1108/MF-03-2014-0063">Managerial Finance</a></span>, <span class="meta">41 (2015), 244&ndash;266.</span>
-        <span class="with">with M. Miletkov &amp; S. Moskalev</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">12</span><div>
-        <span class="title">The role of corporate board structure in attracting foreign investors.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jcorpfin.2014.06.005">Journal of Corporate Finance</a></span>, <span class="meta">24 (2014), 143&ndash;157.</span>
-        <span class="with">with M. Miletkov &amp; A. Poulsen</span>
-        <div class="note"><span class="tag">Award</span>Best Paper in International Finance, Eastern Finance Association (EFA) Meeting, 2014</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">11</span><div>
-        <span class="title">How do public companies adjust their board structures?</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jcorpfin.2013.08.001">Journal of Corporate Finance</a></span>, <span class="meta">23 (2013), 108&ndash;127.</span>
-        <span class="with">with D. Cicero &amp; T. Yang</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">10</span><div>
-        <span class="title">Advertising investments, information asymmetry and insider gains.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jempfin.2013.02.004">Journal of Empirical Finance</a></span>, <span class="meta">22 (2013), 1&ndash;15.</span>
-        <span class="with">with K. Joseph</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">09</span><div>
-        <span class="title">Forecasting residential real estate price changes from online search activity.</span>
-        <span class="journal"><a href="https://doi.org/10.1080/10835547.2013.12091364">Journal of Real Estate Research</a></span>, <span class="meta">35 (2013), 283&ndash;312.</span>
-        <span class="with">with E. Beracha</span>
-        <div class="note"><span class="tag">Award</span>Best Paper (Housing Category), 2012 American Real Estate Society (ARES) Meeting</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">08</span><div>
-        <span class="title">Disentangling the market value of customer satisfaction: Evidence from market reaction to the unanticipated component of ACSI announcements.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.ijresmar.2012.09.003">International Journal of Research in Marketing</a></span>, <span class="meta">30 (2013), 168&ndash;178.</span>
-        <span class="with">with V. Ivanov &amp; K. Joseph</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">07</span><div>
-        <span class="title">Endogeneity and the dynamics of internal corporate governance.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jfineco.2012.03.005">Journal of Financial Economics</a></span>, <span class="meta">105 (2012), 581&ndash;606.</span>
-        <span class="with">with J. Linck &amp; J. Netter</span>
-        <div class="note"><span class="tag">Featured</span><a href="https://corpgov.law.harvard.edu/2012/04/23/endogeneity-and-the-dynamics-of-internal-corporate-governance/">Harvard Law School Forum on Corporate Governance</a></div>
-        <div class="note"><span class="tag">Citations</span>Top 1% in citations in Economics &amp; Business for its publication year (Web of Science); <a href="https://www.billschwert.com/jfe/allstar.htm">JFE Hall of Fame</a> for top-cited papers in Volumes 1&ndash;111</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">06</span><div>
-        <span class="title">The size, concentration and evolution of corporate R&amp;D spending in U.S. firms from 1976 to 2010: Evidence and implications.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jcorpfin.2012.02.002">Journal of Corporate Finance</a></span>, <span class="meta">18 (2012), 496&ndash;518.</span>
-        <span class="with">with M. Hirschey &amp; H. Skiba</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">05</span><div>
-        <span class="title">Financial development and the evolution of property rights and legal institutions.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.ememar.2012.09.005">Emerging Markets Review</a></span>, <span class="meta">13 (2012), 650&ndash;673.</span>
-        <span class="with">with M. Miletkov</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">04</span><div>
-        <span class="title">Implications of data screens on merger and acquisition analysis: A large sample study of mergers and acquisitions from 1992&ndash;2009.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1093/rfs/hhr010">Review of Financial Studies</a></span>, <span class="meta">24 (2011), 2316&ndash;2357.</span>
-        <span class="with">with J. Netter &amp; M. Stegemoller</span>
-        <div class="note">Reprinted, <span style="font-style:italic;">Mergers and Acquisitions</span> (2012), ed. J. H. Mulherin, Edward Elgar Publishing</div>
-        <div class="note"><span class="tag">Award</span>Guy O. and Rosa Lee Mabry Award for Best Paper in the KU School of Business, 2012</div>
-      </div></div>
-
-      <div class="pub"><span class="idx">03</span><div>
-        <span class="title">Forecasting abnormal stock returns and trading volume using investor sentiment: Evidence from online search.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.ijforecast.2010.11.001">International Journal of Forecasting</a></span>, <span class="meta">27 (2011), 1116&ndash;1127.</span>
-        <span class="with">with K. Joseph &amp; Z. Zhang</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">02</span><div>
-        <span class="title">Legal institutions, democracy and financial sector development.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1108/S1569-3732(2009)0000013009">Advances in Financial Economics</a></span>, <span class="meta">13 (2009), 171&ndash;196.</span>
-        <span class="with">with M. Miletkov</span>
-      </div></div>
-
-      <div class="pub"><span class="idx">01</span><div>
-        <span class="title">Corporate boards and regulation: The effect of the Sarbanes-Oxley Act and the exchange listing requirements on firm value.</span>
-        <span class="journal"><a href="http://dx.doi.org/10.1016/j.jcorpfin.2007.03.001">Journal of Corporate Finance</a></span>, <span class="meta">13 (2007), 229&ndash;250.</span>
-        <div class="note"><span class="tag">Award</span>Best Ph.D. Student Paper, 2006 Southern Finance Association (SFA) Meeting</div>
-      </div></div>
-
-    </div>
-  </section>
-
-  <!-- WORKING PAPERS -->
-  <section id="working">
-    <div class="sec-head reveal"><span class="num">03</span><h2>Working Papers</h2></div>
-    <div class="reveal">
-      <div class="wp">
-        <span class="title">Institutional Investors and the Performance of Private Placements.</span>
-        <span class="with">with M. Hertzel &amp; J. Linck</span>
-        <div class="meta">Permanent Working Paper. <a href="files/Institutions_PrivatePlacements_sep08c.pdf">Read the paper</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEACHING -->
-  <section id="teaching">
-    <div class="sec-head reveal"><span class="num">04</span><h2>Teaching</h2></div>
-    <div class="courses reveal">
-      <div class="course">
-        <div class="code">FIN 821</div>
-        <h3>Business Investment and Valuation</h3>
-        <p>How businesses evaluate investment opportunities and deploy capital to enhance firm value. Topics include incremental cash flow identification, discounted cash flow techniques, real options analysis, leverage, cost of capital, and corporate governance.</p>
-      </div>
-      <div class="course">
-        <div class="code">FIN 468</div>
-        <h3>Corporate Financial Policy</h3>
-        <p>A review of basic valuation methods and the resources behind them, followed by advanced techniques such as APV, multiples, and capital cash flow, applied to particular corporate financial decisions.</p>
-      </div>
-      <div class="course">
-        <div class="code">FIN 735</div>
-        <h3>International Finance</h3>
-        <p>The economic determinants of exchange rates and the financing problems faced by multinational corporations and international portfolio managers. Topics include forward, futures, and options markets in foreign currency, purchasing power parity, interest rate parity, covered interest arbitrage, and international risk management.</p>
-      </div>
-      <div class="course">
-        <div class="code">FIN 745</div>
-        <h3>Business Investment</h3>
-        <p>Evaluation of fixed asset investment opportunities, covering cash flow analysis, estimation of required rates of return, risk analysis, and long-term investment analysis.</p>
-      </div>
-      <div class="course">
-        <div class="code">FIN 746</div>
-        <h3>Business Financing</h3>
-        <p>The theory and practice of how businesses raise funds: long-term capital markets and sources of financing, optimal capital structure, dividend policy, and a range of long-term financing problems.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CV / CONTACT -->
-  <section id="cv">
-    <div class="sec-head reveal"><span class="num">05</span><h2>Curriculum Vitae</h2></div>
-    <div class="reveal">
-      <div class="cv-row">
-        <a class="btn primary" href="files/Wintoki_CV_Print.pdf">View / Download CV (PDF)</a>
-      </div>
-      <div class="contact-list">
-        <div><span class="label">Email</span><a href="mailto:jwintoki@ku.edu">jwintoki@ku.edu</a></div>
-        <div><span class="label">Profile</span><a href="https://business.ku.edu/people/jide-wintoki">business.ku.edu</a></div>
-        <div><span class="label">Scholar</span><a href="https://scholar.google.com/citations?user=XpN9MScAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a></div>
-        <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/jide-wintoki-3094782/">Profile</a></div>
-        <div><span class="label">X</span><a href="https://twitter.com/jide_wintoki">@jide_wintoki</a></div>
-      </div>
+      <a class="sel-more" href="research.html">See all 29 publications &rarr;</a>
     </div>
   </section>
 
@@ -535,21 +122,10 @@
 <footer class="site">
   <div class="wrap">
     <div>&copy; 2026 Jide Wintoki</div>
-    <p class="disc pt">The views expressed here are my own and do not represent the views of the University of Kansas.</p>
+    <p class="disc">The views expressed here are my own and do not represent the views of the University of Kansas.</p>
   </div>
 </footer>
 
-<script>
-  (function(){
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
-    els.forEach(function(e){ io.observe(e); });
-  })();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
