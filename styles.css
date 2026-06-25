@@ -90,6 +90,15 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .facts dl > div:first-child dt{border-top:0;}
 .facts dd{margin:0 0 4px;color:var(--ink);line-height:1.45;}
 
+/* Links panel (About) */
+.linkpanel{align-self:start;}
+.linkpanel .eyebrow{margin:0 0 4px;}
+.linkpanel a{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:13px 2px;border-top:1px solid var(--line);color:var(--ink);font-weight:500;font-size:0.98rem;}
+.linkpanel .eyebrow + a{border-top:2px solid var(--ink);}
+.linkpanel a:hover{color:var(--crimson-deep);text-decoration:none;}
+.linkpanel a::after{content:"\2197";color:var(--crimson);font-size:0.9rem;}
+
 /* Selected publications (within About) */
 .sel{margin-top:42px;padding-top:34px;border-top:1px solid var(--line);}
 .sel .eyebrow{margin:0 0 16px;}
