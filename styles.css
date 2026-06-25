@@ -48,7 +48,7 @@ nav.links a:hover{color:var(--crimson-deep);text-decoration:none;}
 nav.links a.current{color:var(--crimson-deep);border-bottom:2px solid var(--crimson);padding-bottom:3px;}
 
 /* Hero (home page) */
-.hero{padding:64px 0 40px;}
+.hero{padding:64px 0 20px;}
 .hero-grid{display:grid;grid-template-columns:1fr 232px;gap:48px;align-items:center;}
 .eyebrow{font-family:var(--mono);font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;
          color:var(--crimson);margin:0 0 18px;}
@@ -81,6 +81,7 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .sec-head h2{font-family:var(--display);font-weight:500;font-size:1.9rem;margin:0;letter-spacing:-0.01em;}
 
 /* About */
+#about{padding-top:32px;}
 .about-grid{display:grid;grid-template-columns:1fr 280px;gap:48px;}
 .about p{margin:0 0 18px;}
 .facts{font-size:0.92rem;align-self:start;}
@@ -90,14 +91,10 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .facts dl > div:first-child dt{border-top:0;}
 .facts dd{margin:0 0 4px;color:var(--ink);line-height:1.45;}
 
-/* Links panel (About) */
-.linkpanel{align-self:start;}
-.linkpanel .eyebrow{margin:0 0 4px;}
-.linkpanel a{display:flex;justify-content:space-between;align-items:center;gap:14px;
-  padding:13px 2px;border-top:1px solid var(--line);color:var(--ink);font-weight:500;font-size:0.98rem;}
-.linkpanel .eyebrow + a{border-top:2px solid var(--ink);}
-.linkpanel a:hover{color:var(--crimson-deep);text-decoration:none;}
-.linkpanel a::after{content:"\2197";color:var(--crimson);font-size:0.9rem;}
+/* Links panel (About) — buttons */
+.linkpanel{align-self:start;display:flex;flex-direction:column;gap:10px;}
+.linkpanel .eyebrow{margin:0 0 6px;}
+.linkpanel .btn{display:block;width:100%;text-align:center;}
 
 /* Selected publications (within About) */
 .sel{margin-top:42px;padding-top:34px;border-top:1px solid var(--line);}
