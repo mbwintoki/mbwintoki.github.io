@@ -3,8 +3,8 @@
   --card:#FFFFFF;
   --ink:#1B1B20;
   --slate:#6A6A73;
-  --crimson:#9E1B32;
-  --crimson-deep:#7E1428;
+  --accent:#0051BA;
+  --accent-deep:#003D8F;
   --line:#E6E4DD;
   --display:'Newsreader', Georgia, 'Times New Roman', serif;
   --body:'IBM Plex Sans', system-ui, -apple-system, Segoe UI, sans-serif;
@@ -23,8 +23,8 @@ body{
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
-a{color:var(--crimson);text-decoration:none;}
-a:hover{color:var(--crimson-deep);text-decoration:underline;text-underline-offset:2px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
 
 /* Header */
@@ -38,20 +38,20 @@ header.site{
      max-width:var(--wrap);margin:0 auto;padding:14px 28px;flex-wrap:wrap;}
 .brand{font-family:var(--display);font-weight:500;font-size:1.18rem;letter-spacing:0.01em;color:var(--ink);}
 .brand:hover{text-decoration:none;color:var(--ink);}
-.brand .mark{color:var(--crimson);}
+.brand .mark{color:var(--accent);}
 nav.links{display:flex;gap:22px;flex-wrap:wrap;}
 nav.links a{
   font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);
   font-weight:500;
 }
-nav.links a:hover{color:var(--crimson-deep);text-decoration:none;}
-nav.links a.current{color:var(--crimson-deep);border-bottom:2px solid var(--crimson);padding-bottom:3px;}
+nav.links a:hover{color:var(--accent-deep);text-decoration:none;}
+nav.links a.current{color:var(--accent-deep);border-bottom:2px solid var(--accent);padding-bottom:3px;}
 
 /* Hero (home page) */
 .hero{padding:64px 0 20px;}
 .hero-grid{display:grid;grid-template-columns:1fr 232px;gap:48px;align-items:center;}
 .eyebrow{font-family:var(--mono);font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;
-         color:var(--crimson);margin:0 0 18px;}
+         color:var(--accent);margin:0 0 18px;}
 .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,6vw,4.1rem);
          line-height:1.02;margin:0 0 14px;letter-spacing:-0.01em;}
 .hero .role{font-family:var(--display);font-style:italic;font-size:1.32rem;color:var(--ink);margin:0 0 18px;}
@@ -59,9 +59,9 @@ nav.links a.current{color:var(--crimson-deep);border-bottom:2px solid var(--crim
 .actions{display:flex;flex-wrap:wrap;gap:10px;}
 .btn{display:inline-block;font-size:0.86rem;font-weight:500;letter-spacing:0.02em;
      padding:9px 16px;border:1px solid var(--line);border-radius:2px;background:var(--card);color:var(--ink);}
-.btn:hover{border-color:var(--crimson);color:var(--crimson-deep);text-decoration:none;}
-.btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff;}
-.btn.primary:hover{background:var(--crimson-deep);border-color:var(--crimson-deep);color:#fff;}
+.btn:hover{border-color:var(--accent);color:var(--accent-deep);text-decoration:none;}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+.btn.primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff;}
 .portrait{width:232px;height:288px;object-fit:cover;border-radius:3px;
           box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(27,27,32,0.45);}
 .portrait-fallback{width:232px;height:288px;border-radius:3px;background:var(--ink);color:var(--paper);
@@ -87,14 +87,15 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .facts{font-size:0.92rem;align-self:start;}
 .facts dl{margin:0;border-top:2px solid var(--ink);}
 .facts dt{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
-          color:var(--crimson);padding:14px 0 2px;border-top:1px solid var(--line);}
+          color:var(--accent);padding:14px 0 2px;border-top:1px solid var(--line);}
 .facts dl > div:first-child dt{border-top:0;}
 .facts dd{margin:0 0 4px;color:var(--ink);line-height:1.45;}
 
 /* Links panel (About) — buttons */
-.linkpanel{align-self:start;display:flex;flex-direction:column;gap:10px;}
+.linkpanel{align-self:start;display:flex;flex-direction:column;gap:12px;}
 .linkpanel .eyebrow{margin:0 0 6px;}
-.linkpanel .btn{display:block;width:100%;text-align:center;}
+.linkpanel .btn{display:flex;align-items:center;justify-content:center;
+  width:100%;text-align:center;}
 
 /* Selected publications (within About) */
 .sel{margin-top:42px;padding-top:34px;border-top:1px solid var(--line);}
@@ -111,14 +112,14 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .pubs{margin:0;}
 .pub{display:grid;grid-template-columns:46px 1fr;gap:6px;padding:18px 0;border-top:1px solid var(--line);}
 .pub:first-child{border-top:0;}
-.pub .idx{font-family:var(--mono);font-size:0.9rem;color:var(--crimson);padding-top:2px;}
+.pub .idx{font-family:var(--mono);font-size:0.9rem;color:var(--accent);padding-top:2px;}
 .pub .title{font-weight:500;}
 .pub .meta{color:var(--slate);font-size:0.96rem;}
 .pub .journal{font-family:var(--display);font-style:italic;font-size:1.02rem;color:var(--ink);}
 .pub .with{color:var(--slate);font-size:0.94rem;}
 .pub .note{font-size:0.86rem;color:var(--slate);margin-top:4px;line-height:1.5;}
 .pub .note .tag{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;
-                color:var(--crimson);margin-right:7px;}
+                color:var(--accent);margin-right:7px;}
 
 /* Working papers */
 .wp{padding:16px 0;border-top:1px solid var(--line);}
@@ -130,7 +131,7 @@ section{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:78px;}
 .courses{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
          border:1px solid var(--line);border-radius:3px;overflow:hidden;}
 .course{background:var(--card);padding:24px;}
-.course .code{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;color:var(--crimson);}
+.course .code{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;color:var(--accent);}
 .course h3{font-family:var(--display);font-weight:500;font-size:1.18rem;margin:6px 0 10px;line-height:1.2;}
 .course p{margin:0;font-size:0.95rem;color:var(--slate);line-height:1.55;}
 
