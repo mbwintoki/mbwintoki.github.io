@@ -161,3 +161,36 @@ html.js .reveal.in{opacity:1;transform:none;}
   section{border-top:1px solid #ccc;padding:18px 0;}
   a{color:#000;text-decoration:none;}
 }
+
+/* ---- Insights: shared category colors, kicker, art panels ---- */
+.cat-governance{--cat:#0B57C7;--c1:#0B57C7;--c2:#00337A;}
+.cat-boards{--cat:#0E7C86;--c1:#0E7C86;--c2:#0A4E56;}
+.cat-insider{--cat:#3F4E7A;--c1:#3F4E7A;--c2:#232E4E;}
+.cat-execs{--cat:#9E1B32;--c1:#9E1B32;--c2:#6E1023;}
+.cat-realestate{--cat:#A96E12;--c1:#B9821F;--c2:#84590F;}
+.cat-markets{--cat:#6D4AA6;--c1:#6D4AA6;--c2:#48307A;}
+.ins-kicker{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cat,var(--accent));font-weight:500;}
+.ins-art{position:relative;overflow:hidden;display:block;
+  background:linear-gradient(140deg,var(--c1,#0051BA),var(--c2,#003D8F));}
+.ins-art::before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.30);top:-46px;right:-34px;}
+.ins-art::after{content:"";position:absolute;width:96px;height:96px;border-radius:50%;
+  background:rgba(255,255,255,.10);bottom:-30px;left:18px;}
+
+/* ---- Insight article pages ---- */
+.art-head{padding:50px 0 6px;}
+.art-head h1{font-family:var(--display);font-weight:500;font-size:clamp(2rem,4.5vw,2.9rem);
+  line-height:1.08;margin:10px 0 14px;letter-spacing:-0.01em;max-width:26ch;}
+.art-dek{color:var(--slate);font-size:1.12rem;line-height:1.55;max-width:58ch;margin:0 0 16px;}
+.art-byline{font-family:var(--mono);font-size:0.73rem;letter-spacing:0.05em;color:var(--slate);
+  margin:0 0 26px;line-height:1.7;}
+.art-banner{height:170px;border-radius:4px;margin:0 0 34px;}
+.art-body{max-width:46rem;}
+.art-body p{margin:0 0 18px;font-size:1.02rem;line-height:1.7;}
+.art-take{max-width:46rem;border:1px solid var(--line);border-left:3px solid var(--cat,var(--accent));
+  background:var(--card);padding:18px 22px;margin:28px 0;border-radius:0 4px 4px 0;}
+.art-take .t{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cat,var(--accent));margin:0 0 8px;}
+.art-take p{margin:0;font-size:0.98rem;line-height:1.6;}
+.art-actions{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 54px;}
