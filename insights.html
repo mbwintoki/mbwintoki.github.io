@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights &middot; Jide Wintoki</title>
+<meta name="description" content="Plain-language summaries of research by Jide Wintoki on corporate governance, insider trading, boards, executives, real estate, and financial markets.">
+<meta property="og:title" content="Insights &middot; Jide Wintoki">
+<meta property="og:description" content="Short, accessible summaries of research in corporate finance, governance, and international finance.">
+<meta property="og:type" content="website">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;1,18..72,400;1,18..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-head{padding-bottom:0;}
+  .ins-intro{color:var(--slate);font-size:1.05rem;max-width:62ch;margin:14px 0 0;line-height:1.55;}
+
+  /* Topic filters */
+  .ins-filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 6px;}
+  .chip{font-family:var(--body);font-size:0.82rem;font-weight:500;letter-spacing:0.01em;
+    padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);
+    color:var(--ink);cursor:pointer;transition:border-color .15s ease,color .15s ease,background .15s ease;}
+  .chip:hover{border-color:var(--accent);color:var(--accent-deep);}
+  .chip.active{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+
+  /* Category color families */
+  .cat-governance{--cat:#0B57C7;--c1:#0B57C7;--c2:#00337A;}
+  .cat-boards{--cat:#0E7C86;--c1:#0E7C86;--c2:#0A4E56;}
+  .cat-insider{--cat:#3F4E7A;--c1:#3F4E7A;--c2:#232E4E;}
+  .cat-execs{--cat:#9E1B32;--c1:#9E1B32;--c2:#6E1023;}
+  .cat-realestate{--cat:#A96E12;--c1:#B9821F;--c2:#84590F;}
+  .cat-markets{--cat:#6D4AA6;--c1:#6D4AA6;--c2:#48307A;}
+
+  .ins-kicker{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--cat,var(--accent));font-weight:500;}
+
+  /* Gradient art panels (in place of photographs) */
+  .ins-art{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--c1,#0051BA),var(--c2,#003D8F));}
+  .ins-art::before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.30);top:-46px;right:-34px;}
+  .ins-art::after{content:"";position:absolute;width:96px;height:96px;border-radius:50%;
+    background:rgba(255,255,255,.10);bottom:-30px;left:18px;}
+
+  /* Featured hero */
+  .ins-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:0;border:1px solid var(--line);
+    border-radius:4px;overflow:hidden;background:var(--card);margin:24px 0 8px;color:var(--ink);
+    text-decoration:none;transition:box-shadow .2s ease;}
+  .ins-hero:hover{text-decoration:none;box-shadow:0 18px 40px -28px rgba(27,27,32,.5);}
+  .ins-hero .ins-art{min-height:280px;}
+  .ins-hero-body{padding:34px 34px 30px;}
+  .ins-featured{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--slate);margin:0 0 14px;}
+  .ins-hero h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);
+    line-height:1.1;margin:8px 0 12px;letter-spacing:-0.01em;}
+  .ins-dek{color:var(--slate);font-size:1.02rem;line-height:1.55;margin:0;}
+  .ins-meta{font-size:0.85rem;color:var(--slate);margin-top:16px;}
+  .ins-read{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:0.76rem;
+    letter-spacing:0.04em;color:var(--accent);}
+  .ins-hero:hover .ins-read{color:var(--accent-deep);}
+
+  /* Card grid */
+  .ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:26px;}
+  .ins-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    overflow:hidden;background:var(--card);color:var(--ink);text-decoration:none;
+    transition:box-shadow .2s ease,transform .2s ease;}
+  .ins-card:hover{text-decoration:none;transform:translateY(-3px);box-shadow:0 16px 34px -26px rgba(27,27,32,.5);}
+  .ins-card .ins-art{height:132px;}
+  .ins-card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;}
+  .ins-card h3{font-family:var(--display);font-weight:500;font-size:1.24rem;line-height:1.18;
+    margin:9px 0 10px;letter-spacing:-0.005em;}
+  .ins-card .ins-dek{font-size:0.94rem;}
+  .ins-card .ins-meta{margin-top:auto;padding-top:14px;}
+
+  .ins-hidden{display:none !important;}
+
+  @media (max-width:720px){
+    .ins-hero{grid-template-columns:1fr;}
+    .ins-hero .ins-art{min-height:150px;}
+    .ins-hero-body{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">Jide <span class="mark">Wintoki</span></a>
+    <nav class="links">
+      <a href="index.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="insights.html" class="current">Insights</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.html">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head reveal">
+    <p class="eyebrow">Research, in Plain Language</p>
+    <h1>Insights</h1>
+    <p class="ins-intro">Short, accessible summaries of my research, written for a general reader. Each links to the full paper for those who want the details.</p>
+  </div>
+
+  <div class="ins-filters reveal">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="governance">Corporate Governance</button>
+    <button class="chip" data-filter="boards">Boards &amp; Directors</button>
+    <button class="chip" data-filter="insider">Insider Trading</button>
+    <button class="chip" data-filter="execs">Executives &amp; Firms</button>
+    <button class="chip" data-filter="realestate">Real Estate &amp; Housing</button>
+    <button class="chip" data-filter="markets">Markets &amp; Innovation</button>
+  </div>
+
+  <!-- FEATURED -->
+  <a class="ins-hero cat-markets reveal" href="https://doi.org/10.1017/S0022109019000383" target="_blank" rel="noopener">
+    <div class="ins-art"></div>
+    <div class="ins-hero-body">
+      <p class="ins-featured">Featured Insight</p>
+      <span class="ins-kicker">Markets &amp; Investors</span>
+      <h2>Do Fund Managers Let Their Politics Pick Their Stocks?</h2>
+      <p class="ins-dek">Mutual fund managers tend to tilt their portfolios toward companies and industries that align with their own political leanings, and leaning into that bias can come at a cost to returns.</p>
+      <div class="ins-meta">with Y. Xi &middot; Journal of Financial &amp; Quantitative Analysis &middot; 2020 &middot; Covered by the WSJ, CNBC &amp; Reuters</div>
+      <span class="ins-read">Read the paper &rarr;</span>
+    </div>
+  </a>
+
+  <!-- GRID -->
+  <div class="ins-grid reveal">
+
+    <a class="ins-card cat-governance" data-cat="governance" href="http://dx.doi.org/10.1016/j.jfineco.2012.03.005" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Corporate Governance</span>
+        <h3>Do Boards Really "Cause" Better Performance?</h3>
+        <p class="ins-dek">Governance and performance evolve together over time. Once that feedback is taken into account, many apparent effects of board structure on firm value no longer hold, a caution that reshaped how the field studies governance.</p>
+        <div class="ins-meta">with J. Linck &amp; J. Netter &middot; Journal of Financial Economics &middot; 2012</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-boards" data-cat="boards" href="http://dx.doi.org/10.1016/j.jacceco.2016.03.003" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Boards &amp; Directors</span>
+        <h3>How Information Travels Through Boardroom Networks</h3>
+        <p class="ins-dek">When a firm's directors sit at the hub of a well-connected web of boards, informed trading in that firm's stock rises around major news, suggesting private information moves along director networks.</p>
+        <div class="ins-meta">with F. Akbas &amp; F. Meschke &middot; Journal of Accounting &amp; Economics &middot; 2016</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-insider" data-cat="insider" href="https://doi.org/10.1017/S0022109022001119" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Insider Trading</span>
+        <h3>The Quiet Channels of Insider Trading</h3>
+        <p class="ins-dek">Insiders can act on private information in indirect ways that standard surveillance tends to miss, a blind spot with real implications for how trading is monitored and enforced.</p>
+        <div class="ins-meta">with B. Goldie, C. Jiang &amp; P. Koch &middot; Journal of Financial &amp; Quantitative Analysis &middot; 2023</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-execs" data-cat="execs" href="http://dx.doi.org/10.1287/mnsc.2015.2418" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Executives &amp; Firms</span>
+        <h3>When the Marketing Chief's Pay Package Misses the Mark</h3>
+        <p class="ins-dek">CMOs at advertising- and R&amp;D-intensive firms command more pay, with more of it tied to the stock. And when a CMO's pay strays from what the role predicts, operating performance, earnings, and stock returns all suffer.</p>
+        <div class="ins-meta">with N. Bansal, K. Joseph &amp; M. Ma &middot; Management Science &middot; 2017</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-realestate" data-cat="realestate" href="https://doi.org/10.1080/10835547.2013.12091364" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Real Estate &amp; Housing</span>
+        <h3>What Online Searches Reveal About Home Prices</h3>
+        <p class="ins-dek">Local internet search activity carries a genuine signal about where housing prices are headed, an early demonstration of using digital footprints to forecast a market.</p>
+        <div class="ins-meta">with E. Beracha &middot; Journal of Real Estate Research &middot; 2013</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-markets" data-cat="markets" href="http://dx.doi.org/10.1016/j.jcorpfin.2016.10.006" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Markets &amp; Innovation</span>
+        <h3>Why Innovative Firms Sit on So Much Cash</h3>
+        <p class="ins-dek">Research-intensive firms hold larger cash reserves to weather the uncertainty and uneven timing of innovation spending, tying a company's cash policy to its appetite for R&amp;D.</p>
+        <div class="ins-meta">with Z. He &middot; Journal of Corporate Finance &middot; 2016</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-boards" data-cat="boards" href="http://dx.doi.org/10.1287/mnsc.2017.2776" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Boards &amp; Directors</span>
+        <h3>What a Director's Tax-Haven Ties Do to Corporate Taxes</h3>
+        <p class="ins-dek">Companies that add directors connected to island tax havens go on to adopt more aggressive tax strategies, showing how a single board appointment can reshape financial policy.</p>
+        <div class="ins-meta">with C. Jiang, T. Kubick &amp; M. Miletkov &middot; Management Science &middot; 2018</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-insider" data-cat="insider" href="https://doi.org/10.1016/j.jbankfin.2021.106114" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Insider Trading</span>
+        <h3>Does Legal Know-How Change How Executives Trade?</h3>
+        <p class="ins-dek">Executives with legal expertise appear to time and structure their own-firm trades differently, shaping how, and how safely, they profit from what they know.</p>
+        <div class="ins-meta">with C. Jiang &amp; Y. Xi &middot; Journal of Banking &amp; Finance &middot; 2021</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-execs" data-cat="execs" href="https://doi.org/10.1016/j.jempfin.2026.101745" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Executives &amp; Firms</span>
+        <h3>What Deflates an Overconfident CEO?</h3>
+        <p class="ins-dek">Seeing a connected CEO fired unexpectedly deflates a chief executive's own overconfidence. In the year that follows, they make fewer acquisitions, and better ones, evidence that hubris is not a fixed trait but one that events can reset.</p>
+        <div class="ins-meta">with Y. Xi &middot; Journal of Empirical Finance &middot; 2026</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-realestate" data-cat="realestate" href="https://doi.org/10.1080/08965803.2025.2536358" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Real Estate &amp; Housing</span>
+        <h3>How Skilled Immigration Moves Home Prices</h3>
+        <p class="ins-dek">Using the randomness of the H-1B visa lottery to separate cause from correlation, the study traces how inflows of highly skilled immigrants affect local housing prices.</p>
+        <div class="ins-meta">with E. Beracha, E. Kim &amp; Y. Xi &middot; Journal of Real Estate Research &middot; in press</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-markets" data-cat="markets" href="http://dx.doi.org/10.1093/rfs/hhr010" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Markets &amp; Innovation</span>
+        <h3>How Small Data Choices Reshape M&amp;A Findings</h3>
+        <p class="ins-dek">Drawing on nearly two decades of deals, the paper shows that routine filters applied to merger samples can meaningfully change what researchers conclude, a caution now widely cited.</p>
+        <div class="ins-meta">with J. Netter &amp; M. Stegemoller &middot; Review of Financial Studies &middot; 2011</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-governance" data-cat="governance" href="https://doi.org/10.1016/j.jcorpfin.2019.04.011" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Corporate Governance</span>
+        <h3>When a "Friendly" Board Is a Feature, Not a Flaw</h3>
+        <p class="ins-dek">After Sarbanes-Oxley forced boards to add outsiders, many firms picked independent directors with ties to the CEO, especially where monitoring is costliest. Performance didn't suffer, suggesting friendly directors were an efficient way to absorb the cost of the new rules.</p>
+        <div class="ins-meta">with Y. Xi &middot; Journal of Corporate Finance &middot; 2019</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-boards" data-cat="boards" href="http://dx.doi.org/10.1057/s41267-016-0033-0" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Boards &amp; Directors</span>
+        <h3>Importing Oversight from Abroad</h3>
+        <p class="ins-dek">Firms are more likely to recruit foreign independent directors from countries with strong legal institutions, in effect importing governance quality across borders.</p>
+        <div class="ins-meta">with M. Miletkov &amp; A. Poulsen &middot; Journal of International Business Studies &middot; 2017</div>
+      </div>
+    </a>
+
+    <a class="ins-card cat-execs" data-cat="execs" href="https://doi.org/10.1111/jems.70040" target="_blank" rel="noopener">
+      <div class="ins-art"></div>
+      <div class="ins-card-body">
+        <span class="ins-kicker">Executives &amp; Firms</span>
+        <h3>Who Really Gains When Noncompetes Weaken?</h3>
+        <p class="ins-dek">When states make noncompetes harder to enforce, knowledge-intensive firms become more profitable and productive. The biggest gains go to the strongest firms, which attract the best talent once workers are free to move, widening the gap between leaders and laggards.</p>
+        <div class="ins-meta">with Z. He &middot; Journal of Economics &amp; Management Strategy &middot; in press</div>
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>&copy; 2026 Jide Wintoki</div>
+    <p class="disc">The views expressed here are my own and do not represent the views of the University of Kansas. Summaries are written for a general audience and are not a substitute for the published papers.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var cards = document.querySelectorAll('.ins-card');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        var f = chip.getAttribute('data-filter');
+        cards.forEach(function(card){
+          var show = (f === 'all') || (card.getAttribute('data-cat') === f);
+          card.classList.toggle('ins-hidden', !show);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
